@@ -1,0 +1,38 @@
+{
+  "name": "弘融借贷",
+  "short_name": "弘融借贷",
+  "gcm_sender_id": "103953800507",
+  "icons": [
+    {
+      "sizes": "512x512",
+      "src": "/static/logo.jpg",
+      "type": "image/jpg"
+    },
+    {
+      "sizes": "256x256",
+      "src": "/static/logo.jpg",
+      "type": "image/jpg"
+    },
+    {
+      "sizes": "192x192",
+      "src": "/static/logo.jpg",
+      "type": "image/jpg"
+    },
+    {
+      "sizes": "144x144",
+      "src": "/static/logo.jpg",
+      "type": "image/jpg"
+    },
+    {
+      "sizes": "102x107",
+      "src": "/static/logo.jpg",
+      "type": "image/jpg"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#08b5fc",
+  "theme_color": "#08b5fc",
+  "description": "弘融借贷移动APP",
+  "orientation": "portrait"
+}

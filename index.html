@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><link rel="shortcut icon" href=/static/logo.jpg type=image/jpg><link rel=manifest href=/static/manifest.json><meta name=theme-color content=#08b5fc><title>弘融借贷</title><link href=/static/css/app.0ac0df0a41aa71b6157a72685d438006.css rel=stylesheet></head><body><div id=app-box></div><script type=text/javascript src=/static/sw/main.js></script><script src=https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js></script><script src=https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js></script><script>const options = {
+      messagingSenderId: '48744293829'
+    }
+
+    firebase.initializeApp(options)
+
+    const messaging = firebase.messaging()
+    messaging.requestPermission()
+    .then(() => {
+      console.log('已开启通知')
+      return messaging.getToken()
+    })
+    .then(token => {
+      console.log(token)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    messaging.onMessage(payload => {
+      console.log('Message received', payload)
+    })</script><script type=text/javascript src=/static/js/manifest.93b3ceff16cb1e367d12.js></script><script type=text/javascript src=/static/js/vendor.2dbe0005884fb21af126.js></script><script type=text/javascript src=/static/js/app.30f698896f12d23bafb3.js></script></body></html>
