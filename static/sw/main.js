@@ -13,29 +13,24 @@ const isLocalhost = Boolean(
 firebase.initializeApp({messagingSenderId: '48744293829'})
 
 let messaging = firebase.messaging()
-messaging.requestPermission()
-  .then(() => {
-    console.log('已开启通知')
-    return messaging.getToken()
-  })
-  .then(token => {
-    console.log(token)
-    const p = document.createElement('p')
-    p.innerHTML = token
-    document.body.appendChild(p)
-  })
-  .catch(err => {
-    console.log(err)
-  })
-messaging.onMessage(payload => {
-  console.log('Message received', payload)
-})
 
 if ('serviceWorker' in navigator &&
     (self.location.protocol === 'https:' || isLocalhost)) {
   navigator.serviceWorker.register('sw.js')
     .then(registration => {
       messaging.useServiceWorker(registration)
+      messaging.requestPermission()
+        .then(() => {
+          console.log('已开启通知')
+          return messaging.getToken()
+        })
+        .then(token => {
+          console.log(token)
+          alert(token)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     })
     .catch(err => {
       console.log('注册 service worker 出现问题:', err)
